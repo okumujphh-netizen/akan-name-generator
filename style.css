@@ -98,8 +98,8 @@ select {
     font-family: inherit;
     color: #333;
 
-    background-color: #fff;
-    border: 2px solid #ddd;
+    background-color: #a5a4a4;
+    border: 2px solid #141414;
     border-radius: 8px;
     outline: none;
 
@@ -111,6 +111,8 @@ input:focus,
 select:focus {
     border-color: #2E8B57;
     outline: none;
+    box-shadow: 0 0 8px rgba(46, 139, 87, 0.3);
+    transform: scale(1.01);
 }
 
 /* Button */
