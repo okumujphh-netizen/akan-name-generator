@@ -124,19 +124,26 @@ select:focus {
 button {
     width: 100%;
     padding: 12px;
-    background-color: #2E8B57;
-    color: white;
+    background-color: #9e9e9e;
+    color: #070707;
     border: none;
     border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 10px rgba(46, 139, 87, 0.3);
 }
 
 /* Button hover */
 button:hover {
-    background-color: #256f47;
+    background-color: #525252;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
 
 /* Result section */
