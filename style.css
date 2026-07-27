@@ -1,5 +1,7 @@
-/* Reset some default browser styles */
-* {
+/* Reset default browser styles */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
