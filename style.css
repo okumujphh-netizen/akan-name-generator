@@ -32,6 +32,15 @@ body {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.87);
+
+  /* Visual enhancements */
+    border: 1px solid #04ff25;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translatex(-5px);
+    box-shadow: 0 15px 25px rgba(0, 255, 64, 0.25);
 }
 
 /* Heading */
