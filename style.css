@@ -68,19 +68,26 @@ p {
     letter-spacing: 0.5px;
 }
 
-/* Form groups */
+/*  Form Groups */
+
 .form-group {
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 /* Labels */
+
 label {
     display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
     color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    cursor: pointer;
 }
-
 /* Inputs and select */
 input,
 select {
