@@ -145,39 +145,75 @@ button:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
 }
+/* Button click effect */
+button:active {
+    transform: scale(1.00);
+}
 
 /* Result section */
 #result {
     margin-top: 25px;
     padding: 20px;
-    border-radius: 8px;
-    background-color: #f5f5f5;
-    border-left: 5px solid #2E8B57;
     text-align: center;
+
+    background-color: #c2c0c0;
+    border-left: 5px solid #000000;
+    border-radius: 8px;
+
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
 }
 
 #result h2 {
-    color: #2E8B57;
+    color: #000000;
     margin-bottom: 10px;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
 }
 
 #result p {
     margin: 0;
     font-size: 18px;
-    color: #333;
+    color: whitesmoke;
+    line-height: 1.6;
+}
+#result {
+    display: none;
 }
 
-/* Responsive design */
+/*  Responsive Design */
+
 @media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
     .container {
+        width: 100%;
         padding: 20px;
     }
 
     h1 {
-        font-size: 28px;
+        font-size: 1.8rem;
     }
 
+    p {
+        font-size: 0.95rem;
+    }
+
+    input,
+    select,
     button {
-        font-size: 16px;
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #result {
+        padding: 15px;
+    }
+
+    #result h2 {
+        font-size: 1.2rem;
     }
 }
