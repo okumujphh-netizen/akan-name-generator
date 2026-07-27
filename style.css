@@ -105,6 +105,11 @@ select {
 
     transition: all 0.3s ease;
 }
+/* Input hover effect */
+input:hover,
+select:hover {
+    border-color: #f4f8f6;
+}
 
 /* Focus effect */
 input:focus,
