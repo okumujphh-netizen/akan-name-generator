@@ -1,0 +1,128 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #4CAF50, #2E8B57);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main container */
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 550px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #2E8B57;
+    margin-bottom: 15px;
+}
+
+/* Description */
+p {
+    text-align: center;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Form groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Inputs and select */
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Focus effect */
+input:focus,
+select:focus {
+    border-color: #2E8B57;
+    outline: none;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2E8B57;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button hover */
+button:hover {
+    background-color: #256f47;
+}
+
+/* Result section */
+#result {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    border-left: 5px solid #2E8B57;
+    text-align: center;
+}
+
+#result h2 {
+    color: #2E8B57;
+    margin-bottom: 10px;
+}
+
+#result p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
