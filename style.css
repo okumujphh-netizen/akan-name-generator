@@ -32,7 +32,7 @@ body {
     max-width: 550px;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.87);
+    box-shadow: 0 6px 15px rgba(94, 93, 93, 0.87);
 
   /* Visual enhancements */
     border: 1px solid #26c000;
@@ -41,14 +41,20 @@ body {
 
 .container:hover {
     transform: translatex(-5px);
-    box-shadow: 0 15px 25px rgb(4, 255, 67);
+     box-shadow: 0 12px 25px rgb(59, 61, 61);
 }
 
 /* Heading */
+
 h1 {
     text-align: center;
-    color: #2E8B57;
+    color: #cecaca;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
     margin-bottom: 15px;
+    text-shadow: 5px 3px 3px rgb(46, 44, 44);
 }
 
 /* Description */
