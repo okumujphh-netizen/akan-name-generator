@@ -1,6 +1,7 @@
-// =========================
+// ====================================
 // Akan Names Arrays
-// =========================
+// ====================================
+
 const maleNames = [
     "Kwasi",
     "Kwadwo",
@@ -21,78 +22,146 @@ const femaleNames = [
     "Ama"
 ];
 
-// =========================
-// Form Event Listener
-// =========================
-document.getElementById("akanForm").addEventListener("submit", function (event) {
+const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+];
 
-    // Prevent page refresh
+// ====================================
+// Validate User Input
+// ====================================
+
+function validateInput(day, month, year, gender) {
+
+    if (isNaN(day) || day < 1 || day > 31) {
+        alert("Please enter a valid day (1-31).");
+        return false;
+    }
+
+    if (isNaN(month) || month < 1 || month > 12) {
+        alert("Please enter a valid month (1-12).");
+        return false;
+    }
+
+    if (isNaN(year) || year <= 0) {
+        alert("Please enter a valid year.");
+        return false;
+    }
+
+    if (gender === "") {
+        alert("Please select your gender.");
+        return false;
+    }
+
+    return true;
+}
+
+// ====================================
+// Calculate Day of the Week
+// Formula:
+// d=((CC/4)-2CC-1+(5YY/4)+(26(MM+1)/10)+DD) mod 7
+// ====================================
+
+function calculateDay(day, month, year) {
+
+    const CC = Math.floor(year / 100);
+    const YY = year % 100;
+
+    let dayOfWeek = Math.floor(
+        (
+            (CC / 4) -
+            (2 * CC) -
+            1 +
+            ((5 * YY) / 4) +
+            ((26 * (month + 1)) / 10) +
+            day
+        ) % 7
+    );
+
+    // Handle negative values
+    if (dayOfWeek < 0) {
+        dayOfWeek += 7;
+    }
+
+    return dayOfWeek;
+}
+
+// ====================================
+// Get Akan Name
+// ====================================
+
+function getAkanName(dayOfWeek, gender) {
+
+    if (gender === "male") {
+        return maleNames[dayOfWeek];
+    } else {
+        return femaleNames[dayOfWeek];
+    }
+
+}
+
+// ====================================
+// Display Result
+// ====================================
+
+function displayResult(dayName, akanName) {
+
+    const result = document.getElementById("result");
+
+    result.style.display = "block";
+
+    result.innerHTML = `
+        <h2>Your Akan Name</h2>
+        <p>You were born on <strong>${dayName}</strong>.</p>
+        <p>Your Akan name is <strong>${akanName}</strong>.</p>
+    `;
+
+}
+
+// ====================================
+// Main Function
+// ====================================
+
+function generateAkanName(event) {
+
     event.preventDefault();
 
-    // Get user input
+    // Get user input using the DOM
     const day = Number(document.getElementById("day").value);
     const month = Number(document.getElementById("month").value);
     const year = Number(document.getElementById("year").value);
     const gender = document.getElementById("gender").value;
 
     // Validate input
-    if (day < 1 || day > 31) {
-        alert("Please enter a valid day (1-31).");
+    const valid = validateInput(day, month, year, gender);
+
+    if (!valid) {
         return;
     }
-
-    if (month < 1 || month > 12) {
-        alert("Please enter a valid month (1-12).");
-        return;
-    }
-
-    if (year <= 0) {
-        alert("Please enter a valid year.");
-        return;
-    }
-
-    if (gender === "") {
-        alert("Please select your gender.");
-        return;
-    }
-
-    // Calculate century and year
-    const CC = Math.floor(year / 100);
-    const YY = year % 100;
 
     // Calculate day of the week
-    let dayOfWeek = Math.floor(
-        (
-            (CC / 4) -
-            (2 * CC) -
-            1 +
-            (5 * YY / 4) +
-            (26 * (month + 1) / 10) +
-            day
-        ) % 7
-    );
+    const dayOfWeek = calculateDay(day, month, year);
 
-    // Handle negative numbers
-    if (dayOfWeek < 0) {
-        dayOfWeek += 7;
-    }
+    // Get day name
+    const dayName = days[dayOfWeek];
 
-    // Select Akan name
-    let akanName;
-
-    if (gender === "male") {
-        akanName = maleNames[dayOfWeek];
-    } else {
-        akanName = femaleNames[dayOfWeek];
-    }
+    // Get Akan name
+    const akanName = getAkanName(dayOfWeek, gender);
 
     // Display result
-    const result = document.getElementById("result");
-    result.style.display = "block";
+    displayResult(dayName, akanName);
 
-    result.innerHTML = `
-        <h2>Your Akan Name</h2>
-        <p>You were born on day number <strong>${dayOfWeek}</strong>.</p>
-        <p>Your Akan name is <strong>${akanName}</strong>.</p>
-    `;
-});
+}
+
+// ====================================
+// Event Listener
+// ====================================
+
+document
+    .getElementById("akanForm")
+    .addEventListener("submit", generateAkanName);
