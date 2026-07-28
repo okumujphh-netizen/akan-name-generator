@@ -1,65 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akan Name Generator</title>
 
-    <!-- Link to CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <div class="container">
-        <h1>AKAN NAME GENERATOR</h1>
+<div class="container">
 
-        <p>
-            Discover your Akan name! Enter your birth date and select your
-            gender to find out the Akan name associated with the day you were born.Akan names come from Ghanaian
-            culture, where children are named based on the day they were born.
-        </p>
+    <h1>Akan Name Generator</h1>
 
-        <form id="akanForm">
+    <p>
+        Enter your birth date and gender to discover your Akan name.
+    </p>
 
-            <div class="form-group">
-                <label for="day">Day</label>
-                <input type="number" id="day" placeholder="Enter day">
-            </div>
+    <form id="akanForm">
 
-            <div class="form-group">
-                <label for="month">Month</label>
-                <input type="number" id="month" placeholder="Enter month">
-            </div>
-
-            <div class="form-group">
-                <label for="year">Year</label>
-                <input type="number" id="year" placeholder="Enter year">
-            </div>
-
-            <div class="form-group">
-                <label for="gender">Gender</label>
-                <select id="gender">
-                    <option value="">-- Select Gender --</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-
-            <button type="submit">Generate Akan Name</button>
-
-        </form>
-
-        <div id="result">
-            <h2>Result</h2>
-            <p>Your Akan name will appear here.</p>
+        <div class="form-group">
+            <label for="day">Day</label>
+            <input type="number" id="day" placeholder="Enter day">
         </div>
-    </div>
 
-    <!-- Link to JavaScript -->
-    <script src="script.js"></script>
+        <div class="form-group">
+            <label for="month">Month</label>
+            <input type="number" id="month" placeholder="Enter month">
+        </div>
+
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input type="number" id="year" placeholder="Enter year">
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender</label>
+
+            <select id="gender">
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+        </div>
+
+        <button type="submit">Generate Akan Name</button>
+
+    </form>
+
+    <div id="result"></div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
