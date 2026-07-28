@@ -36,51 +36,74 @@ document.getElementById("akanForm").addEventListener("submit", generateAkanName)
 
 // Validation Function
 
-function validateInput(day, month, year, gender) {
+function validateInput(day, month, year, gender,result) {
 
     const currentYear = new Date().getFullYear();
 
     
 
-    if (!day) {
-        alert("Please enter the day.");
-        return false;
-    }
+   if (!day) {
+    result.innerHTML = `
+        <h2>Error</h2>
+        <p style="color:red;">Please enter the day.</p>
+    `;
+    return false;
+}
 
-    if (!month) {
-        alert("Please select the month.");
-        return false;
-    }
+if (!month) {
+    result.innerHTML = `
+        <h2>Error</h2>
+        <p style="color:red;">Please select the month.</p>
+    `;
+    return false;
+}
 
-    if (!year) {
-        alert("Please enter the year.");
-        return false;
-    }
+if (!year) {
+    result.innerHTML = `
+        <h2>Error</h2>
+        <p style="color:red;">Please enter the year.</p>
+    `;
+    return false;
+}
 
-    if (gender === "") {
-        alert("Please select your gender.");
-        return false;
-    }
+if (gender === "") {
+    result.innerHTML = `
+        <h2>Error</h2>
+        <p style="color:red;">Please select your gender.</p>
+    `;
+    return false;
+}
+if (day < 1 || day > 31) {
+    result.innerHTML = `
+        <h2>Error</h2>
+        <p style="color:red;">Day must be between 1 and 31.</p>
+    `;
+    return false;
+}
 
-    if (day < 1 || day > 31) {
-        alert("Day must be between 1 and 31.");
-        return false;
-    }
+if (month < 1 || month > 12) {
+    result.innerHTML = `
+        <h2>Error</h2>
+        <p style="color:red;">Please select a valid month.</p>
+    `;
+    return false;
+}
 
-    if (month < 1 || month > 12) {
-        alert("Please select a valid month.");
-        return false;
-    }
+if (year < 1) {
+    result.innerHTML = `
+        <h2>Error</h2>
+        <p style="color:red;">Please enter a valid year.</p>
+    `;
+    return false;
+}
 
-    if (year < 1) {
-        alert("Year must be greater than 0.");
-        return false;
-    }
-
-    if (year > currentYear) {
-        alert(`Year cannot be greater than ${currentYear}.`);
-        return false;
-    }
+if (year > currentYear) {
+    result.innerHTML = `
+        <h2>Error</h2>
+        <p style="color:red;">Year cannot be greater than ${currentYear}.</p>
+    `;
+    return false;
+}
 
     const date = new Date(year, month - 1, day);
 
@@ -137,7 +160,7 @@ if (
     const year = Number(yearValue);
 
     // Validate
-    const valid = validateInput(day, month, year, gender);
+  const valid = validateInput(day, month, year, gender, result);
 
     if (!valid) {
         return;
