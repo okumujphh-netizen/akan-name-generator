@@ -89,7 +89,7 @@ if (month < 1 || month > 12) {
     return false;
 }
 
-if (year < 1) {
+if (year < 2000) {
     result.innerHTML = `
         <h2>Error</h2>
         <p style="color:red;">Please enter a valid year.</p>
