@@ -32,7 +32,7 @@ const days = [
 
 // Event Listener
 
-document.getElementById("akanForm").addEventListener("submit", generateAkanName);
+document.getElementById("nameform").addEventListener("submit", generateAkanName);
 
 // Validation Function
 
